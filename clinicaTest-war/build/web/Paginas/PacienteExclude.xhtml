@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:fe="http://xmlns.jcp.org/jsf/composite/fecha">
+    <h:head>
+        <title>Fechas Excluidas</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panelGrid columns="4">
+                <h3>Fecha Desde</h3>
+                <p:calendar value="#{pacienteExcludeController.fechaDesde}" showOn="button" pattern="dd-MM-yyyy">
+                </p:calendar>
+                <h3>Fecha Hasta</h3>
+                <p:calendar value="#{pacienteExcludeController.fechaHasta}" showOn="button" pattern="dd-MM-yyyy">          
+                </p:calendar>
+            </p:panelGrid> 
+            <br/>
+            <br/>
+            <p:panelGrid columns="5">
+               <!-- <h3>Fechas Excluidas</h3>
+                <p:calendar value="#{pacienteExcludeController.fecha_exclude}" showOn="button" pattern="dd-MM-yyyy">
+                </p:calendar>-->
+               <fe:fecha fecha="Fechas Excluidas"/>
+                <p:commandButton value="+" actionListener="#{pacienteExcludeController.buttonActionAgregar(actionEvent)}"
+                                 update="listExclude"/>     
+                <br/>
+                <br/>
+                <p:commandButton value="Enviar" actionListener="#{pacienteExcludeController.buttonActionEnviar(actionEvent)}" update=":frmQuery:table"/>
+            </p:panelGrid> 
+            <p:dataList var="r" value="#{pacienteExcludeController.fechasExclude}" id="listExclude" emptyMessage="Ninguna fecha excluida">
+                <h:outputText value="#{r}"/>
+            </p:dataList>
+            <br/>
+            <br/>
+        </h:form>
+        <h:form id="frmQuery">
+            <p:dataTable id="table" value="#{pacienteExcludeController.pacienteList}" var="p">
+                <p:column headerText="N°" >
+                    <h:outputText value="#{p.idPaciente}"/>
+                </p:column>
+                <p:column headerText="Nombres">
+                    <h:outputText value="#{p.nombres}"/>
+                </p:column>
+                <p:column headerText="Apellidos">
+                    <h:outputText value="#{p.apellidos}"/>
+                </p:column>
+                <p:column headerText="Fecha de Nacimiento">
+                    <h:outputText value="#{p.fechaNacimiento}"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

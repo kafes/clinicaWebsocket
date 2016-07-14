@@ -1,0 +1,13 @@
+.selected {
+    background-color:#8bb8df;
+}
+.full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+}
+.partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+}

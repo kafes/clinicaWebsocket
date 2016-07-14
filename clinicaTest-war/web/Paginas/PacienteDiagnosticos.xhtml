@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Paciente con Diagnostico A pero no con B</title>
+    </h:head>
+    <h:body>
+        <h:form id="frm"> <p:outputLabel value="Diagnostico A"/>
+            <br/>
+            <p:inputText id="dA" value="#{pacienteABcontroller.a}"/>
+            <br/>
+            <br/>
+            <p:outputLabel value="Diagnostico B"/>
+            <br/>
+            <p:inputText id="dB" value="#{pacienteABcontroller.b}"/>
+            <br/>
+            <br/>
+            <p:commandButton value="Enviar" update=":frmTest:table" actionListener="#{pacienteABcontroller.buttonAction(actionEvent)}"/>
+        </h:form>
+
+        <h:form id="frmTest">
+            <p:dataTable id="table" value="#{pacienteABcontroller.pacienteList}" var="r">
+                <p:column headerText="N°" >
+                    <h:outputText value="#{r.idPaciente}"/>
+                </p:column>
+                <p:column headerText="Nombres">
+                    <h:outputText value="#{r.nombres}"/>
+                </p:column>
+                <p:column headerText="Apellidos">
+                    <h:outputText value="#{r.apellidos}"/>
+                </p:column>
+                <p:column headerText="Fecha de Nacimiento">
+                    <h:outputText value="#{r.fechaNacimiento}"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

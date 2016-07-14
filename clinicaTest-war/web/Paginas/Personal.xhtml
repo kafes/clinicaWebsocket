@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Personal</title>
+    </h:head>
+    <h:body>
+        <p:dataTable lazy="true" paginator="true" first="1" value="#{personalController.model}" var="per"
+                     rows="10" sortBy="id" selectionMode="single" selection="#{personalController.registro}"
+                     rowKey="#{per.idPersonal}">
+            <p:column headerText="No">
+                <h:outputText value="#{per.idPersonal}"/>
+            </p:column>
+              <p:column headerText="Nombres">
+                  <h:outputText value="#{per.nombres}"/>
+            </p:column>
+              <p:column headerText="Apellidos">
+                  <h:outputText value="#{per.apellidos}"/>
+            </p:column>
+        </p:dataTable>
+    </h:body>
+</html>
+

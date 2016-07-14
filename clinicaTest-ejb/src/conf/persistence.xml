@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="clinicaTest-ejbPU" transaction-type="JTA">
+    <jta-data-source>jdbc/clinica</jta-data-source>
+    <class>entidades.tpi.clinica.Area</class>
+    <class>entidades.tpi.clinica.AreaCentro</class>
+    <class>entidades.tpi.clinica.AreaCentroEspacio</class>
+    <class>entidades.tpi.clinica.AsignacionPersonalCentroArea</class>
+    <class>entidades.tpi.clinica.AsignacionPersonalCentroAreaEspacio</class>
+    <class>entidades.tpi.clinica.Centro</class>
+    <class>entidades.tpi.clinica.Diagnostico</class>
+    <class>entidades.tpi.clinica.DiagnosticoExamen</class>
+    <class>entidades.tpi.clinica.Espacio</class>
+    <class>entidades.tpi.clinica.Especialidad</class>
+    <class>entidades.tpi.clinica.Examen</class>
+    <class>entidades.tpi.clinica.Ingreso</class>
+    <class>entidades.tpi.clinica.IngresoDetalle</class>
+    <class>entidades.tpi.clinica.IngresoDetalleDiagnostico</class>
+    <class>entidades.tpi.clinica.IngresoDetalleExamen</class>
+    <class>entidades.tpi.clinica.MedioContacto</class>
+    <class>entidades.tpi.clinica.Paciente</class>
+    <class>entidades.tpi.clinica.PacienteMedioContacto</class>
+    <class>entidades.tpi.clinica.Personal</class>
+    <class>entidades.tpi.clinica.PersonalEspecialidad</class>
+    <class>entidades.tpi.clinica.TipoCentro</class>
+    <class>entidades.tpi.clinica.TipoEspacio</class>
+    <class>entidades.tpi.clinica.TipoEspecialidad</class>
+    <class>entidades.tpi.clinica.TipoExamen</class>
+    <class>entidades.tpi.clinica.TipoIngreso</class>
+    <class>entidades.tpi.clinica.TipoMedioContacto</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties/>
+  </persistence-unit>
+</persistence>
